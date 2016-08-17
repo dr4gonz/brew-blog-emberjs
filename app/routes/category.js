@@ -7,11 +7,13 @@ export default Ember.Route.extend({
   actions: {
     deleteCategory(cat) {
       var relationship_deletions = cat.get('posts').map(function(post){
-        return post.set("categories."+cat, null);
+        post.get("category").removeObject(cat);
+        return post.save();
       });
       Ember.RSVP.all(relationship_deletions).then(function() {
         return cat.destroyRecord();
       });
+
       this.transitionTo('index');
     }
   }
