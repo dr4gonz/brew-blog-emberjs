@@ -1,1 +1,31 @@
-{{yield}}
+<div class="col-md-6 col-md-offset-3">
+  {{#if updatePostForm}}
+  <div>
+    <form>
+      <div class="form-group">
+        <label for="title">Title</label>
+        {{textarea cols="80" rows="1" value=post.title id="title"}}
+      </div>
+
+      <div class="form-group">
+        <label for="author">Author</label>
+        {{input value=post.author id="author"}}
+      </div>
+
+      <div class="form-group">
+        <label for="date">Date</label>
+        {{input value=post.date id="date"}}
+      </div>
+
+      <div class="form-group">
+        <label for="body">Post Body</label>
+        {{textarea cols="60" rows="6" value=post.body id="body"}}
+      </div>
+
+      <button {{action 'update' post}}>Save</button>
+    </form>
+  </div>
+  {{else}}
+  <button class="btn btn-sm btn-primary" name="editbtn" {{action 'showUpdateForm'}}>Edit</button>
+  {{/if}}
+</div>
