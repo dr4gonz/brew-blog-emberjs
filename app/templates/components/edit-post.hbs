@@ -1,5 +1,5 @@
+{{#if updatePostForm}}
 <div class="col-md-6 col-md-offset-3">
-  {{#if updatePostForm}}
   <div>
     <form>
       <div class="form-group">
@@ -22,10 +22,10 @@
         {{textarea cols="60" rows="6" value=post.body id="body"}}
       </div>
 
-      <button {{action 'update' post}}>Save</button>
+      <button class="btn btn-sm btn-primary" {{action 'update' post}}>Save</button>
     </form>
   </div>
-  {{else}}
-  <button class="btn btn-sm btn-primary" name="editbtn" {{action 'showUpdateForm'}}>Edit</button>
-  {{/if}}
 </div>
+{{else}}
+<button class="btn btn-sm btn-primary" name="editbtn" {{action 'showUpdateForm'}}>Edit</button>
+{{/if}}
