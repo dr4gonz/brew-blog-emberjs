@@ -12,5 +12,9 @@ export default Ember.Route.extend({
         }
       });
     },
+    deletePost(post) {
+      post.destroyRecord();
+      this.transitionTo('index');
+    }
   }
 });
