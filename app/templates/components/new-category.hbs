@@ -1,0 +1,14 @@
+
+{{#if showNewCategoryForm}}
+  <div>
+    <form>
+      <div class="form-group">
+        {{input value=name id="name" placeholder="Category Name"}}
+      </div>
+
+      <button class="btn btn-sm btn-primary" {{action 'createCategory'}}>Create Category</button>
+    </form>
+  </div>
+{{else}}
+  <button class="btn btn-sm" {{action 'showForm'}}>Create New Category</button>
+{{/if}}

@@ -1,6 +1,15 @@
 <div class="row">
   {{#link-to 'new-post'}}New Post{{/link-to}}
-  {{#each model as |post|}}
-    {{post-tile post=post update='update' deletePost='deletePost'}}
+  {{#each model.posts as |post|}}
+    {{post-tile post=post}}
+    {{edit-post post=post update='update' deletePost='deletePost'}}
   {{/each}}
+  {{#each model.categories as |category|}}
+    {{#link-to 'category' category.id}}
+      {{category.name}}
+    {{/link-to}}
+  {{/each}}
+</div>
+<div class="row">
+  {{new-category createCategory='createCategory'}}
 </div>

@@ -21,7 +21,9 @@
         {{textarea cols="60" rows="6" value=body id="body"}}
       </div>
 
-      <button class="btn btn-sm btn-primary" {{action 'createPost'}}>Publish</button>
+      {{multiselect-checkboxes options=categories labelProperty='name' selection=selectedCategories}}
+
+      <button class="btn btn-sm btn-primary" {{action 'createPost' categories}}>Publish</button>
     </form>
   </div>
 </div>

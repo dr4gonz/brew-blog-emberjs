@@ -1,6 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
+  selectedCategories: [],
   actions: {
     createPost() {
       var params = {
@@ -8,8 +9,12 @@ export default Ember.Component.extend({
         body: this.get('body'),
         date: this.get('date'),
         author: this.get('author'),
+        category: this.selectedCategories
       };
+      // categories.forEach(function(category){
+      //   console.log('categoryChecked'+category.id);
+      // });
       this.sendAction('createPost', params);
-    }
+    },
   }
 });

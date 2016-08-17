@@ -1,0 +1,7 @@
+<h1>{{model.name}}</h1>
+
+{{#each model.posts as |post|}}
+  {{post-tile post=post}}
+{{/each}}
+
+<button {{action 'deleteCategory' model}}>Delete Category</button>

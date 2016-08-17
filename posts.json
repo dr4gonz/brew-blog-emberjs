@@ -9,5 +9,11 @@
     "author": "Brad",
     "date": "08/11/2016",
     "body": "Kinfolk art party tousled plaid craft beer, man braid helvetica keffiyeh salvia health goth roof party distillery flannel kogi. Art party PBR&B food truck vice, biodiesel vegan blue bottle tattooed austin lomo pork belly williamsburg slow-carb selvage. Retro street art typewriter offal vice, portland +1 gochujang thundercats chillwave etsy messenger bag. Skateboard schlitz 90's polaroid freegan. Bushwick cold-pressed helvetica, typewriter lumbersexual shoreditch letterpress roof party man bun green juice. Pork belly viral hammock craft beer. Brooklyn waistcoat meditation, sartorial irony narwhal DIY cred before they sold out tumblr yuccie."
-  }]
+  }],
+  "categories": [{
+      "name": "Lagers"
+    },{
+      "name": "Ales"
+    }
+  ]
 }

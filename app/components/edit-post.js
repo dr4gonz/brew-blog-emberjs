@@ -15,6 +15,11 @@ export default Ember.Component.extend({
       };
       this.set('updatePostForm', false);
       this.sendAction('update', post, params);
+    },
+    deletePost(post) {
+      if(confirm('Are you sure you want to delete this post?')) {
+        this.sendAction('deletePost', post);
+      }
     }
   }
 });

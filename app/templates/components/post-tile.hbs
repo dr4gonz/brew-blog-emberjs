@@ -2,6 +2,5 @@
   <h4>{{post.title}}</h4>
   <h6>By: {{post.author}} - {{post.date}}</h6>
   <p>{{post.body}}</p>
-  {{edit-post post=post update='update'}}
-  <button name="delete" class="btn btn-small btn-warning" {{action 'deletePost' post}}>Delete</button>
+  <p>Category: {{post.category.name}}</p>
 </div>
