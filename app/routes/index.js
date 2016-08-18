@@ -4,10 +4,9 @@ export default Ember.Route.extend({
   model() {
     return Ember.RSVP.hash({
       posts: this.store.query('post', {
-        limitToLast: 5,
         orderBy: 'date'
       }).then((response) => {
-        return response.toArray().reverse();
+        return response.toArray().reverse().slice(this.startIndex, this.startIndex+5);
       }),
       categories: this.store.findAll('category')
     });
@@ -18,5 +17,15 @@ export default Ember.Route.extend({
       newCategory.save();
       this.transitionTo('index');
     },
-  }
+    changeStartIndex(direction) {
+      if (direction === 'next') {
+        this.startIndex += 5;
+      }
+      if (direction === 'prev' && this.startIndex !== 0) {
+        this.startIndex -= 5;
+      }
+      this.refresh();
+    }
+  },
+  startIndex: 0
 });

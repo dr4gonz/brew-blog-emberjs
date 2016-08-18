@@ -1,7 +1,7 @@
 <div class="row">
   {{#link-to 'new-post'}}New Post{{/link-to}}
-  <button {{action 'changeStartIndex' "next"}}>Next</button>
   <button {{action 'changeStartIndex' "prev"}}>Previous</button>
+  <button {{action 'changeStartIndex' "next"}}>Next</button>
   {{#each model.posts as |post|}}
     {{post-tile post=post}}
   {{/each}}
