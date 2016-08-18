@@ -8,17 +8,6 @@ export default Ember.Route.extend({
     });
   },
   actions: {
-    update(post, params) {
-      Object.keys(params).forEach(function(key) {
-        if(params[key]!==undefined) {
-          post.set(key, params[key]);
-        }
-      });
-    },
-    deletePost(post) {
-      post.destroyRecord();
-      this.transitionTo('index');
-    },
     createCategory(params) {
       var newCategory = this.store.createRecord('category', params);
       newCategory.save();

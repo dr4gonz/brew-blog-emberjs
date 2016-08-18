@@ -13,12 +13,18 @@ export default Ember.Component.extend({
         date: this.get('date'),
         body: this.get('body'),
       };
+      Object.keys(params).forEach(function(key) {
+        if(params[key]!==undefined) {
+          post.set(key, params[key]);
+        }
+      });
       this.set('updatePostForm', false);
-      this.sendAction('update', post, params);
+      post.save();
     },
     deletePost(post) {
       if(confirm('Are you sure you want to delete this post?')) {
-        this.sendAction('deletePost', post);
+        post.destroyRecord();
+        this.transitionTo('index');
       }
     }
   }
