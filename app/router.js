@@ -11,7 +11,7 @@ Router.map(function() {
   this.route('contact');
   this.route('new-post');
   this.route('category', {path: '/category/:category_id'});
-  this.route('post');
+  this.route('post', {path: './post/:post_id'});
 });
 
 export default Router;

@@ -1,5 +1,7 @@
 <div class="col-md-12">
+  {{#link-to 'post' post.id}}
   <h4>{{post.title}}</h4>
+  {{/link-to}}
   <h6>By: {{post.author}} - {{post.date}}</h6>
   <p>{{post.body}}</p>
   <p>Category: </p>
