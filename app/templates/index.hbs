@@ -2,7 +2,6 @@
   {{#link-to 'new-post'}}New Post{{/link-to}}
   {{#each model.posts as |post|}}
     {{post-tile post=post}}
-    {{edit-post post=post}}
   {{/each}}
   {{#each model.categories as |category|}}
     {{#link-to 'category' category.id}}

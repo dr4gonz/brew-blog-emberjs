@@ -2,6 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   updatePostForm: false,
+  routing: Ember.inject.service('-routing'),
   actions: {
     showUpdateForm() {
       this.set('updatePostForm', true);
@@ -30,6 +31,7 @@ export default Ember.Component.extend({
           return post.destroyRecord();
         });
       }
+      this.get("routing").transitionTo("index");
     }
   }
 });
