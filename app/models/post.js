@@ -5,5 +5,6 @@ export default DS.Model.extend({
   author: DS.attr(),
   body: DS.attr(),
   date: DS.attr(),
-  category: DS.hasMany('category', {async: true})
+  category: DS.hasMany('category', {async: true}),
+  comments: DS.hasMany('comment', {async:true})
 });
